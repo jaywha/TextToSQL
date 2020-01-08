@@ -1,0 +1,22 @@
+﻿<Window x:Class="TextToSQL.frmLoadQuery"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextToSQL"
+        mc:Ignorable="d"
+        Title="Select Query" Height="450" Width="800">
+    <Grid Background="#FFCCFFFD">
+        <DataGrid x:Name="dgQueries" Margin="10,10,10,10" AutoGenerateColumns="False" MouseDoubleClick="DataGrid_MouseDoubleClick" Loaded="DataGrid_Loaded" CanUserAddRows="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Query" Binding="{Binding Path=Query}" Width=".6*">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Database" Binding="{Binding Path=Database}" Width=".15*">
+                </DataGridTextColumn>
+                <DataGridTextColumn Header="Parameters" Binding="{Binding Path=Parameters}" Width=".25*">
+                </DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+
+    </Grid>
+</Window>

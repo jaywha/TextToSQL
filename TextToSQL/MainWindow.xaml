@@ -1,0 +1,43 @@
+﻿<Window x:Class="TextToSQL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TextToSQL"
+        mc:Ignorable="d"
+        Title="Text to SQL" Height="411.005" Width="801.95">
+    <Grid Background="#FFCCFFFD">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button" Content="Select File" Margin="0,0,257,35" Click="Button_Click" HorizontalAlignment="Right" Width="75" Height="20" VerticalAlignment="Bottom" BorderBrush="Black" Background="#FFF2FF9F" FontWeight="Bold"/>
+        <RichTextBox x:Name="rtbOutput" Margin="0,32,10,10" HorizontalAlignment="Right" Width="236" TextChanged="RtbOutput_TextChanged" BorderBrush="Black">
+            <FlowDocument LineHeight="5"/>
+        </RichTextBox>
+        <Label x:Name="label_Copy2" Content="Output" HorizontalAlignment="Right" Margin="0,0,180,0" VerticalAlignment="Top" FontSize="18" FontWeight="Bold"/>
+        <GroupBox x:Name="groupBox" Header="Parameters" Height="158" Margin="10,6,256,0" VerticalAlignment="Top" FontSize="16" FontWeight="Bold" BorderBrush="Black">
+            <Grid>
+                <ListBox x:Name="lbParams" HorizontalAlignment="Left" Height="122" Margin="357,3,0,0" VerticalAlignment="Top" Width="147" FontSize="12" FontWeight="Normal" BorderBrush="Black"/>
+                <Label x:Name="label_Copy1" Content="Detected&#xD;&#xA;Parameters:" HorizontalAlignment="Left" Margin="264,3,0,0" VerticalAlignment="Top" FontSize="14" FontWeight="Bold" MouseDoubleClick="label_Copy1_MouseDoubleClick"/>
+                <TextBox x:Name="tbParams" HorizontalAlignment="Left" Height="68" Margin="14,3,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" FontSize="12" FontWeight="Normal" TextChanged="TbParams_TextChanged" BorderBrush="Black"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox x:Name="groupBox1" Header="Query" Margin="10,164,256,60" FontSize="14" FontWeight="Bold" BorderBrush="Black">
+            <Grid>
+                <Label Content="Database:" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="76"/>
+                <RichTextBox x:Name="rtbQuery" Margin="0,32,-2,1" FontSize="12" FontWeight="Normal" TextChanged="RtbQuery_TextChanged" BorderBrush="Black">
+                    <FlowDocument/>
+                </RichTextBox>
+                <TextBox x:Name="tbDatabase" HorizontalAlignment="Left" Height="23" Margin="81,4,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="147" FontSize="12" FontWeight="Normal" BorderBrush="Black"/>
+            </Grid>
+        </GroupBox>
+        <Label x:Name="lblFilePath" Content="&#xD;&#xA;" Margin="10,325,417,10"/>
+        <Button x:Name="button1" Content="Run" HorizontalAlignment="Right" Margin="0,0,337,35" Width="75" Click="Button1_Click" Height="20" VerticalAlignment="Bottom" Background="#FF89FF77" FontWeight="Bold"/>
+        <Button x:Name="btnLoad" Content="Load Query" HorizontalAlignment="Right" Margin="0,0,337,10" Width="75" Click="btnLoad_Click" Height="20" VerticalAlignment="Bottom" Background="#FFFCB6FF" FontWeight="Bold"/>
+        <Button x:Name="btnSave" Content="Save Query" HorizontalAlignment="Right" Margin="0,0,256,10" Width="75" Click="btnSave_Click" Height="20" VerticalAlignment="Bottom" Background="#FFFCB6FF" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
